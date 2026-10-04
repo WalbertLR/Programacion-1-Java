@@ -9,59 +9,61 @@
  */
 public class Tv {
     
-    private String Marca;
+    private String marca;
     
-    public void setMarca(String Marca){
-        this.Marca = Marca;
+    public void setMarca(String marca){
+        this.marca = marca;
     }
     
     public void getMarca(){
-        System.out.println("Marca: "+Marca);
+        System.out.println("Marca: "+marca);
     }
     
-    private int Pulgadas;
+    private int pulgadas;
     
-    public void setPulgadas(int Pulgadas){
-        this.Pulgadas = Pulgadas;
+    public void setPulgadas(int pulgadas){
+        this.pulgadas = pulgadas;
     }
     
     public void getPulgadas(){
-        System.out.println("Pulgadas: " + Pulgadas);
+        System.out.println("Pulgadas: " + pulgadas);
     }
     
-    private boolean Encendido;
+    private boolean encendido;
     
     
     public void getEncendido(){
-        System.out.println(Encendido);
+        System.out.println(encendido);
     }
     
-    private int Volumen;
+    private int volumen;
     
-    public void setVolumen(int Volumen){
-        this.Volumen = Volumen;
+    public void setVolumen(int volumen){
+        this.volumen = volumen;
     }
     
     public void getVolumen(){
-        System.out.println("Volumen: " + Volumen);
+        System.out.println("Volumen: " + volumen);
     }
     
     public void encender(){
         System.out.println("La TV se está encendiendo...");
-        Encendido = true;
+        encendido = true;
     }
     
     public void apagar(){
         System.out.println("La TV se está apagando...");
-        Encendido = false;
+        encendido = false;
     }
     
     public void subirVolumen(){
         System.out.println("Subiendo el volumen...");
+        this.volumen ++;
     }
     
     public void bajarVolumen(){
         System.out.println("Bajando el volumen...");
+        this.volumen --;
     }
     
     
