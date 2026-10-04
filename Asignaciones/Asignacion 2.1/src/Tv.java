@@ -63,9 +63,4 @@ public class Tv {
     public void bajarVolumen(){
         System.out.println("Bajando el volumen...");
     }
-    
-    
-  
-   
-    
 }
