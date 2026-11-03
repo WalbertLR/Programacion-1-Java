@@ -34,5 +34,3 @@ El código está dividido en tres clases principales:
 
 ---
 
-
-}
