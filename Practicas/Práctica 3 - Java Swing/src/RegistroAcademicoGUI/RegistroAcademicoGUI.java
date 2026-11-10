@@ -7,7 +7,9 @@ package RegistroAcademicoGUI;
 import javax.swing.JOptionPane;
 
 /**
- *
+ * Ventana principal para la captura de datos del estudiante y cálculo
+ * del estado académico final.
+ * 
  * @author walbe
  */
 public class RegistroAcademicoGUI extends javax.swing.JFrame {
@@ -15,7 +17,7 @@ public class RegistroAcademicoGUI extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RegistroAcademicoGUI.class.getName());
 
     /**
-     * Creates new form RegistroAcademicoGUI
+     * Constructor predeterminado. Inicializa los componentes de la interfaz.
      */
     public RegistroAcademicoGUI() {
         initComponents();
@@ -388,6 +390,10 @@ public class RegistroAcademicoGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnotaExamenFinalActionPerformed
 
+    /**
+     * Manejador del evento clic en el botón "Calcular Resultado".
+     * Valida las entradas, suma las notas y determina la condición final.
+     */
     private void btnResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoActionPerformed
         if (!validarCampos()) {
             return;
@@ -399,6 +405,8 @@ public class RegistroAcademicoGUI extends javax.swing.JFrame {
         else{
             return;
         }
+        
+        // Evaluar si el estudiante aprueba (60 puntos o más)
         if(notaTotal >= 60){
             txtResultado.setText("Aprobado");
         }
@@ -407,7 +415,14 @@ public class RegistroAcademicoGUI extends javax.swing.JFrame {
             txtResultado.setText("Reprobado");
         }
     }//GEN-LAST:event_btnResultadoActionPerformed
+    /**
+     * Valida que los campos personales no estén vacíos y que las notas
+     * cumplan con los rangos permitidos.
+     * 
+     * @return true si todos los datos son válidos, false en caso contrario.
+     */
     private boolean validarCampos() {
+        
         String textoNombreCompleto = txtNombreCompleto.getText().trim();
         if (textoNombreCompleto.isEmpty()) {
             JOptionPane.showMessageDialog(null, "El campo de nombre completo no puede estar vacío.");
@@ -455,7 +470,7 @@ public class RegistroAcademicoGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "El campo de examen final no puede estar vacío.");
             return false;
         }
-        
+        // Validación de límites máximos por rubro
         if (!validarNota(txtnotaPracticas, "prácticas", 40)) {
             return false;
         }
@@ -479,7 +494,9 @@ public class RegistroAcademicoGUI extends javax.swing.JFrame {
        
 
     }
-    
+    /**
+     * Comprueba si el valor de un campo numérico está dentro del rango 0 a máximo.
+     */
     private boolean validarNota(javax.swing.JTextField campo, String nombreCampo, int maximo) {
         String texto = campo.getText().trim();
 
@@ -504,7 +521,11 @@ public class RegistroAcademicoGUI extends javax.swing.JFrame {
 
         return true;
     }
-    
+    /**
+     * Calcula la suma de todos los campos numéricos de calificaciones.
+     * 
+     * @return suma total en puntos acumulados.
+     */
     private int sumarValores(){
         int notatextoPracticas = Integer.parseInt(txtnotaPracticas.getText().trim());
         int notatextoAsignaciones = Integer.parseInt(txtnotaAsignaciones.getText().trim());
@@ -516,6 +537,7 @@ public class RegistroAcademicoGUI extends javax.swing.JFrame {
         return notaTotal;
         
     }
+    // Filtros de entrada para evitar caracteres numéricos en campos de texto
     private void txtNombreCompletoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreCompletoKeyTyped
         char letras = evt.getKeyChar();
         if (Character.isDigit(letras)) {
@@ -523,7 +545,7 @@ public class RegistroAcademicoGUI extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_txtNombreCompletoKeyTyped
-
+// Filtros para evitar letras en campos numéricos
     private void txtMatriculaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMatriculaKeyTyped
         char numeros = evt.getKeyChar();
         if (!Character.isDigit(numeros) && numeros != java.awt.event.KeyEvent.VK_BACK_SPACE) {
