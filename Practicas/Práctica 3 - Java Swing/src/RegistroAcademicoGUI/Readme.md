@@ -38,3 +38,7 @@ src/
     │   └── self-assessment_18141887.png
     ├── Main.java
     └── RegistroAcademicoGUI.java
+
+| Interfaz Principal | Validación de Errores | Cálculo de Resultado |
+| :---: | :---: | :---: |
+| ![Interfaz Principal](imagenes/pantalla_principal.png) | ![Validación](imagenes/validacion_error.png) | ![Resultado](imagenes/resultado_calculado.png) |
