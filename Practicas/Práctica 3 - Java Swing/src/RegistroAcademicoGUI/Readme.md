@@ -41,4 +41,4 @@ src/
 ```
 | Interfaz Principal | Validación de Errores | Cálculo de Resultado |
 | :---: | :---: | :---: |
-| ![Interfaz Principal](imagenes/pantalla_principal.png) | ![Validación](imagenes/validacion_error.png) | ![Resultado](imagenes/resultado_calculado.png) |
+| ![Interfaz Principal](Imagenes/pantalla_principal.png) | ![Validación](Imagenes/validacion_error.png) | ![Resultado](Imagenes/resultado_calculado.png) |
