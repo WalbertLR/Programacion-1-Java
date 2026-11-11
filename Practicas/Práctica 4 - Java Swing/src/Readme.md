@@ -42,7 +42,7 @@ Una aplicación de escritorio desarrollada en **Java Swing** mediante **NetBeans
 
 
 ### Interfaz Principal
-![Interfaz Principal](docs/screenshots/main.png)
+![Interfaz Principal](Imagenes/main.png)
 
 ### Operaciones y Validaciones
 | Operación Aritmética | Validación División por Cero | Conversor de Temperatura |
